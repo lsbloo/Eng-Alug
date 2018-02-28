@@ -1,18 +1,37 @@
 package com.example.osvaldoairon.pojoalug;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
+
+import com.example.osvaldoairon.pojoalug.adapter_fragment.FragPageAdapter;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+
+
+        tabLayout=(TabLayout)findViewById(R.id.tab_layout);
+        viewPager=(ViewPager)findViewById(R.id.view_pager);
+
+        viewPager.setAdapter(new FragPageAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.secoes)));
+
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override

@@ -1,4 +1,10 @@
 <resources>
+
+    <string name="fragment_anucio">Fragment anucio de tab Anucio </string>
+    <string name="fragment_cadastro"> Fragment cadastroCasa tab Casa</string>
+    <string name="fragment_contato"> Fragment contato de contato ! tab contato</string>
+
+
     <string name="app_name">Alug</string>
     <string name="nome_logo">Carregando !</string>
     <string name="logo">LogoApp</string>

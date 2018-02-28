@@ -20,10 +20,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.UUID;
+import com.example.osvaldoairon.pojoalug.DAO.FirebaseInit;
+
 
 public class CadCliente extends AppCompatActivity {
 
-
+    private static FirebaseInit firebaseInit;
     private Button btn_cadastar;
     private static EditText edt_nome;
     private static EditText edt_endereco;
@@ -33,8 +35,7 @@ public class CadCliente extends AppCompatActivity {
     private static EditText edt_conf_senha;
     private static EditText edt_email;
 
-    public FirebaseDatabase fireBaseDatabase;
-    public DatabaseReference databaseReference;
+
 
 
     @Override
@@ -42,7 +43,7 @@ public class CadCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cad_cliente);
 
-        startFirebase();
+        firebaseInit = new FirebaseInit(CadCliente.this);
 
         edt_nome = (EditText) findViewById(R.id.edt_nome);
         edt_endereco = (EditText) findViewById(R.id.edt_end);
@@ -81,13 +82,6 @@ public class CadCliente extends AppCompatActivity {
         return true;
     }
 
-    public void startFirebase() {
-        FirebaseApp.initializeApp(this);
-        fireBaseDatabase = fireBaseDatabase.getInstance();
-        //fireBaseDatabase.setPersistenceEnabled(true);
-        databaseReference = fireBaseDatabase.getReference();
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -130,7 +124,7 @@ public class CadCliente extends AppCompatActivity {
                     /*
                     Adicionando informaçeõs (cadastro) dos Usuarios no database;
                      */
-                         databaseReference.child("Usuarios").child(String.valueOf(user.getId())).setValue(user);
+                         firebaseInit.getDatabaseReference().child("Usuarios").child(String.valueOf(user.getId())).setValue(user);
 
 
                          Toast.makeText(CadCliente.this, "Cadastrado!..", Toast.LENGTH_SHORT).show();
