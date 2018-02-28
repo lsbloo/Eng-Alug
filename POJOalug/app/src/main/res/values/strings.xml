@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Alug</string>
+    <string name="nome_logo">Carregando !</string>
+    <string name="logo">LogoApp</string>
+    <string name="login">Digite seu login</string>
+    <string name="senha">Digite sua senha</string>
+
+    <string name="nome"> Digite seu nome</string>
+    <string name="endereco"> Digite o endereço</string>
+    <string name="tel"> Digite o telefone </string>
+    <string name="acc"> Login aqui </string>
+    <string name="pass"> Senha aqui</string>
+    <string name="confpass">Confirmar senha</string>
+    <string name="email"> exemplo@gmail.com</string>
+
+    <string name="acao_pequisar"> Pequisar </string>
+    <string name="acao_novo"> Novo </string>
+    <string name="acao_info"> Info </string>
+    <string name="hint_busca">Procurar </string>]
+
+    <string name="opcao_aba"> Abas</string>
+    <string name="opcao_spinner"> Spinner </string>
+    <string name="opcao_pager"> View Pager </string>
+
+    <string-array name="secoes">
+        <item> Anúncios </item>
+        <item> Cadastrar Casas </item>
+        <item> Contatos</item>
+    </string-array>
+
+    <array name="cores_bg">
+        <item>#F44336</item>
+        <item>#4CAF50</item>
+        <item>#03A9F4</item>
+    </array>
+
+
+
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login">40sp</dimen>
+    <dimen name="padrao">20sp</dimen>
+    <dimen name="cad">15sp</dimen>
+    <dimen name="men">15sp</dimen>
+
+    <dimen name="activity_horizontal_magin"> 16dp </dimen>
+    <dimen name="activity_verticial_margin"> 16dp </dimen>
+    <dimen name="toolbar_padding">0dp</dimen>
+
+</resources>
