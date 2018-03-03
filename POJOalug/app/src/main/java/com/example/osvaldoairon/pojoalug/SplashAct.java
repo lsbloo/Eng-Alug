@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 
 public class SplashAct extends AppCompatActivity {
-    private static int TIME_SPLASH=4000; // Tempo do splash em milisegundos é equivalente a 6seg;
+    private static int TIME_SPLASH=4000; // Tempo do splash em milisegundos é equivalente a 4seg;
 
 
     @Override

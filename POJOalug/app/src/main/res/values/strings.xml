@@ -10,6 +10,7 @@
     <string name="logo">LogoApp</string>
     <string name="login">Digite seu login</string>
     <string name="senha">Digite sua senha</string>
+    <string name="email_log"> Digite seu email </string>
 
     <string name="nome"> Digite seu nome</string>
     <string name="endereco"> Digite o endereço</string>

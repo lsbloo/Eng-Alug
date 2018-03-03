@@ -16,14 +16,14 @@ public class TelasAbasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_telas_abas);
-        setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
-        AbasPagerAdapter pageAdapter = new AbasPagerAdapter(this,getSupportFragmentManager());
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mViewPager = (ViewPager)findViewById(R.id.pagina);
-        mViewPager.setAdapter(pageAdapter);
-        mTableLayout = (TableLayout)findViewById(R.id.tabs);
-        mTableLayout.setupWithViewPager(mViewPager);
+        //etContentView(R.layout.activity_telas_abas);
+        //setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
+        //AbasPagerAdapter pageAdapter = new AbasPagerAdapter(this,getSupportFragmentManager());
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //mViewPager = (ViewPager)findViewById(R.id.pagina);
+        //mViewPager.setAdapter(pageAdapter);
+        //mTableLayout = (TableLayout)findViewById(R.id.tabs);
+        //mTableLayout.setupWithViewPager(mViewPager);
 
 
     }
