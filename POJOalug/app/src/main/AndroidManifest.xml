@@ -30,9 +30,6 @@
         <activity android:name=".LogEnter"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".CadCliente"
-            android:screenOrientation="portrait"
-            />
         <activity android:name=".Act.Act_Activity"
             android:screenOrientation="portrait"/>
     </application>

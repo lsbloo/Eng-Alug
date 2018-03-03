@@ -10,10 +10,11 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
+import com.example.osvaldoairon.pojoalug.Comunicador.ComunicadorEvent;
 import com.example.osvaldoairon.pojoalug.adapter_fragment.FragPageAdapter;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ComunicadorEvent {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -60,5 +61,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void comunicadorFragment(String dado) {
+
     }
 }

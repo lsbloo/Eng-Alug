@@ -12,6 +12,8 @@
     <string name="senha">Digite sua senha</string>
     <string name="email_log"> Digite seu email </string>
 
+    <string name="description_house"> Escreva dados importantes sobre sua casa. </string>
+
     <string name="nome"> Digite seu nome</string>
     <string name="endereco"> Digite o endereço</string>
     <string name="tel"> Digite o telefone </string>

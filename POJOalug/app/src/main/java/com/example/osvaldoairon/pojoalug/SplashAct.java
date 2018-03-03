@@ -9,15 +9,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.widget.ProgressBar;
 
 public class SplashAct extends AppCompatActivity {
     private static int TIME_SPLASH=4000; // Tempo do splash em milisegundos é equivalente a 4seg;
+    private ProgressBar progressBar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+
 
         new Handler().postDelayed(new Runnable() {
             /*

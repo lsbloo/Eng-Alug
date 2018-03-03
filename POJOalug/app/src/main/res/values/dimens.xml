@@ -8,5 +8,6 @@
     <dimen name="activity_horizontal_magin"> 16dp </dimen>
     <dimen name="activity_verticial_margin"> 16dp </dimen>
     <dimen name="toolbar_padding">0dp</dimen>
+    <dimen name="dir">18dp</dimen>
 
 </resources>
