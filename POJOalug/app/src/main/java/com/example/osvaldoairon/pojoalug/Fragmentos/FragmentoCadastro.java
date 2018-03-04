@@ -11,6 +11,7 @@ import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -31,8 +33,25 @@ import com.example.osvaldoairon.pojoalug.Blind.MaskEditText;
 import com.example.osvaldoairon.pojoalug.Comunicador.ComunicadorEvent;
 import com.example.osvaldoairon.pojoalug.Manifest;
 import com.example.osvaldoairon.pojoalug.R;
+import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
+
+import java.io.File;
+import java.util.UUID;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -46,7 +65,16 @@ public class FragmentoCadastro extends Fragment {
     private EditText edt_telefone, edt_endereco , dados_casa;
     private CheckBox check1,check2,check3,check4 , checkFoto;
     private ImageView imgbtn;
+    private static StorageReference mStorageRef;
+    private static Uri imagemSelecionada;
+    String  fotoStringurl;
+    private Button btn_saveCad;
 
+    private static FirebaseAuth autenticacao;
+    private static FirebaseDatabase firebaseDatabase;
+    private static DatabaseReference databaseReference;
+
+    private int quantidade_quartos = 0;
 
 
 
@@ -65,6 +93,12 @@ public class FragmentoCadastro extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        autenticacao = FirebaseAuth.getInstance();
+
+        FirebaseApp.initializeApp(getActivity());
+        firebaseDatabase = firebaseDatabase.getInstance();
+        //fireBaseDatabase.setPersistenceEnabled(true);
+        databaseReference = firebaseDatabase.getReference();
 
         imgbtn = (ImageView)getActivity().findViewById(R.id.img);
         edt_telefone = (EditText)getActivity().findViewById(R.id.edt_tel);
@@ -75,23 +109,84 @@ public class FragmentoCadastro extends Fragment {
         check2 = (CheckBox)getActivity().findViewById(R.id.check2);
         check3 = (CheckBox)getActivity().findViewById(R.id.check3);
         check4 = (CheckBox)getActivity().findViewById(R.id.check4);
-        checkFoto =(CheckBox)getActivity().findViewById(R.id.up_foto);
+        //checkFoto =(CheckBox)getActivity().findViewById(R.id.up_foto);
 
+        btn_saveCad = (Button)getActivity().findViewById(R.id.btn_savecad);
         edt_telefone.addTextChangedListener(MaskEditText.mask(edt_telefone, MaskEditText.FORMAT_FONE));
 
 
-        checkFoto.setOnClickListener(new View.OnClickListener() {
+        imgbtn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP_MR1)
             @Override
             public void onClick(View view) {
                 exibirImg();
-
-                if(checkFoto.isChecked()){
-                    checkFoto.setChecked(false);
-                }
             }
         });
 
+        btn_saveCad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(edt_endereco.getText().toString().isEmpty() || edt_telefone.getText().toString().isEmpty() || dados_casa.getText().toString().isEmpty()){
+                    Toast.makeText(getActivity(), "Preencha todos os campos !", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    if(check1.isChecked()){
+                        quantidade_quartos = 1;
+                        check1.setChecked(false);
+                    }
+                    if(check2.isChecked()){
+                        quantidade_quartos = 2;
+                        check2.setChecked(false);
+                    }
+                    if(check3.isChecked()){
+                        quantidade_quartos = 3;
+                        check3.setChecked(false);
+                    }
+                    if(check4.isChecked()){
+                        quantidade_quartos = 4;
+                        check4.setChecked(false);
+                    }
+
+                    Usuario usuario = new Usuario();
+                    usuario.setEndereco(edt_endereco.getText().toString());
+                    usuario.setInformacoesCasa(dados_casa.getText().toString());
+                    usuario.setTelefone(edt_telefone.getText().toString());
+                    usuario.setQuant_quartos(quantidade_quartos);
+                    usuario.setId(UUID.randomUUID());
+                    databaseReference.child("Casas-Usuario").child(String.valueOf(usuario.getId())).setValue(usuario);
+                    salvarInformacoesUser();
+                }
+
+            }
+        });
+
+
+
+
+    }
+
+    private void salvarInformacoesUser() {
+
+        FirebaseUser user = autenticacao.getCurrentUser();
+
+        if(user != null){
+            UserProfileChangeRequest profile  = new UserProfileChangeRequest.Builder().setDisplayName("osvaldo").setPhotoUri(imagemSelecionada).build();
+
+            user.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        subirImagemFirebaseSTORAGE();
+                        Toast.makeText(getActivity(), "Upload Phooto", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "Not Upload PHoto!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
 
 
     }
@@ -102,7 +197,7 @@ public class FragmentoCadastro extends Fragment {
 
         if(requestCode == IMAGEM_ESCOLHIDA && resultCode == RESULT_OK && data.getData() != null) {
             try {
-                Uri imagemSelecionada = data.getData();
+                imagemSelecionada = data.getData();
 
                 //String[] colunas = {MediaStore.Images.Media.DATA};
 
@@ -128,7 +223,7 @@ public class FragmentoCadastro extends Fragment {
 
                  */
                 imgbtn.setImageBitmap(
-                        redimensionarImagemBitmap(getActivity(),bit,120,120));
+                        redimensionarImagemBitmap(getActivity(),bit,100,100));
 
 
 
@@ -138,6 +233,27 @@ public class FragmentoCadastro extends Fragment {
             }
 
         }
+    }
+
+    private void subirImagemFirebaseSTORAGE() {
+
+        StorageReference profileImagemref = FirebaseStorage.getInstance().getReference("FotosPerfilUsuario/"+System.currentTimeMillis() + "jpg");
+
+        if(imagemSelecionada != null ){
+            profileImagemref.putFile(imagemSelecionada).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    fotoStringurl = taskSnapshot.getDownloadUrl().toString();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+
+
+                }
+            });
+        }
+
     }
 
     @Override
@@ -210,5 +326,6 @@ public class FragmentoCadastro extends Fragment {
         }
 
         @Override public String key() { return "square()"; }
+
     }
 }

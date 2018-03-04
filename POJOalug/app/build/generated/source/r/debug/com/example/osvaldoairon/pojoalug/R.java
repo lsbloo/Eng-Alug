@@ -3629,7 +3629,7 @@ public final class R {
     public static final int btn_acessar=0x7f090026;
     public static final int btn_cadastrar=0x7f090027;
     public static final int btn_entrar=0x7f090028;
-    public static final int button2=0x7f090029;
+    public static final int btn_savecad=0x7f090029;
     public static final int buttonPanel=0x7f09002a;
     public static final int cancel_action=0x7f09002b;
     public static final int center=0x7f09002c;
@@ -3804,15 +3804,14 @@ public final class R {
     public static final int transition_transform=0x7f0900d5;
     public static final int uniform=0x7f0900d6;
     public static final int up=0x7f0900d7;
-    public static final int up_foto=0x7f0900d8;
-    public static final int useLogo=0x7f0900d9;
-    public static final int view_offset_helper=0x7f0900da;
-    public static final int view_pager=0x7f0900db;
-    public static final int visible=0x7f0900dc;
-    public static final int wide=0x7f0900dd;
-    public static final int withText=0x7f0900de;
-    public static final int wrap=0x7f0900df;
-    public static final int wrap_content=0x7f0900e0;
+    public static final int useLogo=0x7f0900d8;
+    public static final int view_offset_helper=0x7f0900d9;
+    public static final int view_pager=0x7f0900da;
+    public static final int visible=0x7f0900db;
+    public static final int wide=0x7f0900dc;
+    public static final int withText=0x7f0900dd;
+    public static final int wrap=0x7f0900de;
+    public static final int wrap_content=0x7f0900df;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f0a0000;

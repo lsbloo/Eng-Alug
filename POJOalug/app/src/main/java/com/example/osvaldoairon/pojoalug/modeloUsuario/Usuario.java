@@ -11,11 +11,26 @@ public class Usuario implements Serializable{
 
     private String endereco;
     private String telefone;
-
-
+    private int quant_quartos;
+    private String informacoesCasa;
 
     private UUID id;
 
+    public String getInformacoesCasa() {
+        return informacoesCasa;
+    }
+
+    public int getQuant_quartos() {
+        return quant_quartos;
+    }
+
+    public void setInformacoesCasa(String informacoesCasa) {
+        this.informacoesCasa = informacoesCasa;
+    }
+
+    public void setQuant_quartos(int quant_quartos) {
+        this.quant_quartos = quant_quartos;
+    }
 
     public void setId(UUID id){
         this.id=id;
@@ -23,7 +38,6 @@ public class Usuario implements Serializable{
     public UUID getId(){
         return id;
     }
-
 
 
     public String getEndereco() {
@@ -46,14 +60,10 @@ public class Usuario implements Serializable{
         this.telefone = telefone;
     }
 
-
-
-
     /*
     Padrao para usar o SNap shot < construtor sem argumentos \/
      */
     public Usuario(){}
-
     public Usuario(String endereco, String telefone ){
 
         setEndereco(endereco);

@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 public class SplashAct extends AppCompatActivity {
-    private static int TIME_SPLASH=4000; // Tempo do splash em milisegundos é equivalente a 4seg;
+    private static int TIME_SPLASH=5000; // Tempo do splash em milisegundos é equivalente a 5seg;
     private ProgressBar progressBar;
 
 
