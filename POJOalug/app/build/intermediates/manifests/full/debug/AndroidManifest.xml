@@ -43,9 +43,6 @@
             android:name="com.example.osvaldoairon.pojoalug.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.osvaldoairon.pojoalug.LoginAct"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.example.osvaldoairon.pojoalug.LogEnter"
             android:screenOrientation="portrait" />
         <activity

@@ -53,7 +53,7 @@ public class FragmentoAnucio extends Fragment {
                 /*
                 Download dados do DatabaseReference
                  */
-                
+
                 String value = dataSnapshot.getValue(String.class);
                 Log.d(TAG, "Value is: " + value);
             }

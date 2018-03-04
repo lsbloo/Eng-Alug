@@ -27,9 +27,6 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".LoginAct"
-            android:screenOrientation="portrait" />
         <activity android:name=".LogEnter"
             android:screenOrientation="portrait"/>
 

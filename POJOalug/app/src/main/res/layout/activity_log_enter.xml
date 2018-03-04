@@ -1,108 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.osvaldoairon.pojoalug.LogEnter">
 
+
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="179dp"
-        android:layout_height="167dp"
+        android:id="@+id/imageView"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        app:srcCompat="@drawable/logodois" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_action_email"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/edt_pass"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/edt_email"
+        android:layout_alignStart="@+id/edt_email"
+        android:layout_below="@+id/edt_email"
+        android:layout_marginTop="42dp"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_action_pass"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="300dp"
+
+        android:layout_height="50dp"
+        android:layout_above="@+id/acessar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:elevation="10dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="25dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Entrar"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/acessar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:contentDescription="@string/logo"
-        app:srcCompat="@drawable/logopequena"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="26dp" />
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="326dp"
-        android:layout_marginBottom="16dp"
-        android:background="@android:color/holo_blue_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageView2"
-            android:text="Email"
-            android:textSize="@dimen/login"
-            android:textStyle="bold"
-            tools:ignore="NotSibling"
-            tools:layout_editor_absoluteX="152dp"
-            tools:layout_editor_absoluteY="602dp" />
-
-        <EditText
-            android:id="@+id/edt_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView2"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_below="@+id/textView2"
-            android:ems="10"
-            android:hint="@string/email_log"
-            android:inputType="textPersonName" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/edt_login"
-            android:text="Senha"
-            android:textSize="@dimen/login"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/edt_senha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView3"
-            android:ems="10"
-            android:hint="@string/senha"
-            android:inputType="textPassword" />
-
-        <Button
-            android:id="@+id/btn_acessar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="Criar Conta"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/btn_entrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:layout_toEndOf="@+id/btn_acessar"
-            android:layout_toRightOf="@+id/btn_acessar"
-            android:text="Acessar"
-            android:textSize="24sp" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:visibility="gone" />
-
-    </RelativeLayout>
-
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginBottom="30dp"
+        android:text="Cadastre-se aqui"
+        android:textSize="20sp" />
+</RelativeLayout>

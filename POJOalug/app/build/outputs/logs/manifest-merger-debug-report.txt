@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
+ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [com.google.firebase:firebase-core:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-core-11.0.4.aar\5d50793b90da374aac1890fc24f7c69f\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.firebase:firebase-database:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-database-11.0.4.aar\44f79ac64d3deeb1c78ad6d30dfd284f\AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.firebase:firebase-storage:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.0.4.aar\08c594b0dd4af8b7c7a89f12670d99fa\AndroidManifest.xml:2:1-4:12
@@ -11,6 +11,7 @@ MERGED from [com.android.support:design:26.1.0] C:\Users\Pedro H\.gradle\caches\
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\0c8d69288560a7fcf26d0936694b465a\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\6f0f7118b976d4ef2b8202b324ea3d96\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\91f874b043c1464c65d326218378f408\AndroidManifest.xml:16:1-21:12
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\0b2335d610fb52ea6dec17fba20a0f09\AndroidManifest.xml:17:1-28:12
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c347ad4a4e7af01c595580e48b55da2\AndroidManifest.xml:16:1-35:12
 MERGED from [com.google.firebase:firebase-database-connection:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.0.4.aar\e8045f1ac4a61ab39a87433c064e6980\AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\e1a25fe65629ace2ad1bfa32e174e9f7\AndroidManifest.xml:16:1-29:12
@@ -31,20 +32,20 @@ MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Pedro H\.
 MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\929e53fa4542e707d25609e114f1fbc6\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\22defa0414f107636d62a03cc9a7473b\AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\4a0a9d3b9a464cbaa87704d91f52053c\AndroidManifest.xml:17:1-30:12
-INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
-INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:3:5-48
 		INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-40:12
+		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:2:11-69
@@ -67,7 +68,7 @@ ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManife
 	android:name
 		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:7:22-78
 application
-ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:10:5-38:19
+ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:10:5-35:19
 MERGED from [com.google.firebase:firebase-core:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-core-11.0.4.aar\5d50793b90da374aac1890fc24f7c69f\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-core:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-core-11.0.4.aar\5d50793b90da374aac1890fc24f7c69f\AndroidManifest.xml:5:5-20
 MERGED from [com.android.support:design:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\e2ac63b1ca006eb720b01e1224093312\AndroidManifest.xml:25:5-29:19
@@ -78,6 +79,8 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Pe
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\6f0f7118b976d4ef2b8202b324ea3d96\AndroidManifest.xml:9:5-20
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\91f874b043c1464c65d326218378f408\AndroidManifest.xml:19:5-20:19
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\91f874b043c1464c65d326218378f408\AndroidManifest.xml:19:5-20:19
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\0b2335d610fb52ea6dec17fba20a0f09\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\0b2335d610fb52ea6dec17fba20a0f09\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c347ad4a4e7af01c595580e48b55da2\AndroidManifest.xml:24:5-34:19
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c347ad4a4e7af01c595580e48b55da2\AndroidManifest.xml:24:5-34:19
 MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\e1a25fe65629ace2ad1bfa32e174e9f7\AndroidManifest.xml:24:5-28:19
@@ -148,24 +151,18 @@ ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManife
 		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:29:13-49
 	android:name
 		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:28:13-41
-activity#com.example.osvaldoairon.pojoalug.LoginAct
-ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:30:9-32:52
-	android:screenOrientation
-		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:32:13-49
-	android:name
-		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:31:13-37
 activity#com.example.osvaldoairon.pojoalug.LogEnter
+ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:30:9-31:51
+	android:screenOrientation
+		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:31:13-49
+	android:name
+		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:30:19-43
+activity#com.example.osvaldoairon.pojoalug.Act.Act_Activity
 ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:33:9-34:51
 	android:screenOrientation
 		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:34:13-49
 	android:name
-		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:33:19-43
-activity#com.example.osvaldoairon.pojoalug.Act.Act_Activity
-ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:36:9-37:51
-	android:screenOrientation
-		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:37:13-49
-	android:name
-		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:36:19-51
+		ADDED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml:33:19-51
 uses-sdk
 INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\src\main\AndroidManifest.xml
@@ -184,6 +181,8 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Pe
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\6f0f7118b976d4ef2b8202b324ea3d96\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\91f874b043c1464c65d326218378f408\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\91f874b043c1464c65d326218378f408\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\0b2335d610fb52ea6dec17fba20a0f09\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\0b2335d610fb52ea6dec17fba20a0f09\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c347ad4a4e7af01c595580e48b55da2\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\3c347ad4a4e7af01c595580e48b55da2\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-database-connection:11.0.4] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.0.4.aar\e8045f1ac4a61ab39a87433c064e6980\AndroidManifest.xml:3:5-43
@@ -240,6 +239,8 @@ meta-data#android.support.VERSION
 ADDED from [com.android.support:design:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\e2ac63b1ca006eb720b01e1224093312\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\0c8d69288560a7fcf26d0936694b465a\AndroidManifest.xml:26:9-28:38
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\0c8d69288560a7fcf26d0936694b465a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\0b2335d610fb52ea6dec17fba20a0f09\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\0b2335d610fb52ea6dec17fba20a0f09\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:transition:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\0394115fd3a803cad05181ce80c0cda9\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:transition:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\0394115fd3a803cad05181ce80c0cda9\AndroidManifest.xml:23:9-25:38
 MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Pedro H\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\9c2b724f58b6845c7804cc420b850de3\AndroidManifest.xml:26:9-28:38

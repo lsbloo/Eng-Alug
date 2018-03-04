@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,7 +24,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class LogEnter extends AppCompatActivity {
 
     private ProgressBar progressBar;
-    private Button criarConta, acessarConta;
+    private CardView acessar;
+    private TextView criarConta;
     private EditText emailLogin;
     private EditText senhaLogin;
     private FirebaseAuth mAutentica;
@@ -30,13 +33,14 @@ public class LogEnter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_enter);
-        criarConta =(Button)findViewById(R.id.btn_acessar);
-        acessarConta=(Button)findViewById(R.id.btn_entrar);
 
-        emailLogin =(EditText) findViewById(R.id.edt_login);
-        senhaLogin=(EditText)findViewById(R.id.edt_senha);
 
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        criarConta =(TextView)findViewById(R.id.acessar);
+        acessar =(CardView)findViewById(R.id.card);
+        emailLogin =(EditText) findViewById(R.id.edt_email);
+        senhaLogin=(EditText)findViewById(R.id.edt_pass);
+
+        //progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
 
         mAutentica = FirebaseAuth.getInstance();
@@ -46,14 +50,14 @@ public class LogEnter extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(emailLogin.getText().toString().isEmpty() || senhaLogin.getText().toString().isEmpty()){
+               if(emailLogin.getText().toString().isEmpty() || senhaLogin.getText().toString().isEmpty()){
                     Toast.makeText(LogEnter.this, "Preencha os campos corretamente!", Toast.LENGTH_SHORT).show();
 
                 }
 
-                else{
-                    String email = emailLogin.getText().toString();
-                    String password = senhaLogin.getText().toString();
+               else{
+                   String email = emailLogin.getText().toString();
+                   String password = senhaLogin.getText().toString();
 
 
 
@@ -74,7 +78,7 @@ public class LogEnter extends AppCompatActivity {
                             if(task.isSuccessful()){
 
                                 Log.d("Criando Usuario","CriandoUsuarioEmail:sucesso");
-                                progressBar.setVisibility(View.GONE);
+                                //progressBar.setVisibility(View.GONE);
                                 Toast.makeText(LogEnter.this, "Conta Criada!", Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = mAutentica.getCurrentUser();
                             }
@@ -87,7 +91,7 @@ public class LogEnter extends AppCompatActivity {
 
                             }
 
-                            
+
                         }
                     });
                     limparCampos();
@@ -97,7 +101,7 @@ public class LogEnter extends AppCompatActivity {
 
         });
 
-        acessarConta.setOnClickListener(new View.OnClickListener() {
+        acessar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -117,7 +121,7 @@ public class LogEnter extends AppCompatActivity {
                         senhaLogin.setError("Password maior que 6 digitos porfavor");
                         senhaLogin.requestFocus();
                     }
-                    progressBar.setVisibility(View.VISIBLE);
+                   //progressBar.setVisibility(View.VISIBLE);
 
 
                     mAutentica.signInWithEmailAndPassword(email, password).addOnCompleteListener(LogEnter.this, new OnCompleteListener<AuthResult>() {
@@ -125,7 +129,7 @@ public class LogEnter extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if (task.isSuccessful()) {
-                                progressBar.setVisibility(View.GONE);
+                                //progressBar.setVisibility(View.GONE);
                                 Log.d("Tag Login de Usuario", "Login de usuario REALIZADO COM SUCESSO");
                                 Intent at = new Intent(LogEnter.this, MainActivity.class);
                                 at.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -142,6 +146,7 @@ public class LogEnter extends AppCompatActivity {
             }
         });
     }
+
 
     public void limparCampos(){
         emailLogin.setText("");

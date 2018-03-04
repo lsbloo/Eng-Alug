@@ -34,7 +34,7 @@ public class SplashAct extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 // Esse método será executado sempre que o timer acabar
                 // E inicia a activity principal
-                Intent i = new Intent(SplashAct.this, LoginAct.class);
+                Intent i = new Intent(SplashAct.this, LogEnter.class);
                 startActivity(i);
 
                 // Fecha esta activity
