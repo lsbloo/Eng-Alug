@@ -35,12 +35,11 @@ public class LoginAct extends AppCompatActivity {
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent at = new Intent(
-                        LoginAct.this,CadCliente.class
-                );
-                startActivity(at);
+
 
             }
         });
     }
+
+
 }

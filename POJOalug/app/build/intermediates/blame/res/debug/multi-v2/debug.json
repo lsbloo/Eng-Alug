@@ -1222,6 +1222,22 @@
             ]
         },
         {
+            "outputFile": "C:\\Users\\Pedro H\\Osvaldo\\Eng-Alug\\POJOalug\\app\\build\\intermediates\\res\\merged\\debug\\values-v17_values-v17.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Pedro H\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0c8d69288560a7fcf26d0936694b465a\\res\\values-v17\\values-v17.xml",
+                    "from": {
+                        "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,228,456,614,764,936,1164,1406,1577,1751,1920,2193,2393,2597",
+                        "endLines": "4,8,11,14,17,21,25,28,31,34,38,41,45,49",
+                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "223,451,609,759,931,1159,1401,1572,1746,1915,2188,2388,2592,2921"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\Pedro H\\Osvaldo\\Eng-Alug\\POJOalug\\app\\build\\intermediates\\res\\merged\\debug\\values-zh-rTW_values-zh-rTW.arsc.flat",
             "map": [
                 {
@@ -1273,22 +1289,6 @@
                         "startOffsets": "1926,2029,2189,2306,2410,2576,2694,2980,3149,3252,3412,3529,3690,3828,3914,4001",
                         "endColumns": "102,159,116,103,165,117,123,168,102,159,116,160,137,85,86,102",
                         "endOffsets": "2024,2184,2301,2405,2571,2689,2813,3144,3247,3407,3524,3685,3823,3909,3996,4099"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\Pedro H\\Osvaldo\\Eng-Alug\\POJOalug\\app\\build\\intermediates\\res\\merged\\debug\\values-v17_values-v17.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Pedro H\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0c8d69288560a7fcf26d0936694b465a\\res\\values-v17\\values-v17.xml",
-                    "from": {
-                        "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,228,456,614,764,936,1164,1406,1577,1751,1920,2193,2393,2597",
-                        "endLines": "4,8,11,14,17,21,25,28,31,34,38,41,45,49",
-                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "223,451,609,759,931,1159,1401,1572,1746,1915,2188,2388,2592,2921"
                     }
                 }
             ]

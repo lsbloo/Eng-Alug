@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.ProgressBar;
 
 public class SplashAct extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class SplashAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        progressBar =(ProgressBar)findViewById(R.id.progressBar2);
 
 
         new Handler().postDelayed(new Runnable() {
@@ -29,6 +31,7 @@ public class SplashAct extends AppCompatActivity {
              */
             @Override
             public void run() {
+                progressBar.setVisibility(View.GONE);
                 // Esse método será executado sempre que o timer acabar
                 // E inicia a activity principal
                 Intent i = new Intent(SplashAct.this, LoginAct.class);
