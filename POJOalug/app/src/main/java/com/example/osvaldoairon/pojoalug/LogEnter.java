@@ -69,7 +69,7 @@ public class LogEnter extends AppCompatActivity {
                         senhaLogin.setError("Password maior que 6 digitos porfavor");
                         senhaLogin.requestFocus();
                     }
-                    progressBar.setVisibility(View.VISIBLE);
+//                    progressBar.setVisibility(View.VISIBLE);
 
                     mAutentica.createUserWithEmailAndPassword(email,password).addOnCompleteListener(LogEnter.this, new OnCompleteListener<AuthResult>() {
                         @Override
