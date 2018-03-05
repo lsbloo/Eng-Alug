@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/gradient"
+    android:background="@drawable/fundodois"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
-        app:srcCompat="@drawable/logodois" />
+        app:srcCompat="@drawable/logomaioroftwo" />
 
     <EditText
         android:id="@+id/edt_email"
@@ -24,10 +24,10 @@
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:background="#11000000"
+        android:background="#42426F"
         android:drawableLeft="@drawable/ic_action_email"
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email_tela"
         android:inputType="textPersonName"
         android:textSize="16dp" />
 
@@ -39,10 +39,10 @@
         android:layout_alignStart="@+id/edt_email"
         android:layout_below="@+id/edt_email"
         android:layout_marginTop="42dp"
-        android:background="#11000000"
+        android:background="#42426F"
         android:drawableLeft="@drawable/ic_action_pass"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/pass_tela"
         android:inputType="textPassword" />
 
     <android.support.v7.widget.CardView
@@ -54,7 +54,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="27dp"
         android:elevation="10dp"
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="#32CD32"
         app:cardCornerRadius="25dp">
 
         <RelativeLayout

@@ -4,6 +4,9 @@
     <string name="fragment_cadastro"> Fragment cadastroCasa tab Casa</string>
     <string name="fragment_contato"> Fragment contato de contato ! tab contato</string>
 
+    <string name="email_tela">Email</string>
+    <string name="pass_tela">Password</string>
+
 
     <string name="app_name">Alug</string>
     <string name="nome_logo">Carregando !</string>

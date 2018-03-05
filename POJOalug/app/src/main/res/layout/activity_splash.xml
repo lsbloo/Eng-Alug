@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/fundodois"
     tools:context="com.example.osvaldoairon.pojoalug.SplashAct">
 
     <RelativeLayout
@@ -13,23 +13,22 @@
 
         <ImageView
             android:id="@+id/imglogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="26dp"
             android:contentDescription="@string/nome_logo"
-            app:srcCompat="@drawable/logodois" />
+            app:srcCompat="@drawable/logomaioroftwo" />
 
         <ProgressBar
             android:id="@+id/progressBar2"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imglogo"
-            android:layout_centerVertical="true"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp" />
+            android:layout_marginBottom="100dp" />
 
     </RelativeLayout>
 
