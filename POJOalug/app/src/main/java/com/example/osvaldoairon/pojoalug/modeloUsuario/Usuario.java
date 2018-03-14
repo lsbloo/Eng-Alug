@@ -1,6 +1,9 @@
 package com.example.osvaldoairon.pojoalug.modeloUsuario;
 
+import android.support.v4.app.FragmentActivity;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
