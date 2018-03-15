@@ -2,6 +2,8 @@ package com.example.osvaldoairon.pojoalug.modeloUsuario;
 
 import android.support.v4.app.FragmentActivity;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -16,8 +18,10 @@ public class Usuario implements Serializable{
     private String telefone;
     private int quant_quartos;
     private String informacoesCasa;
+    private String id;
+    private Object context;
 
-    private UUID id;
+
 
     public String getInformacoesCasa() {
         return informacoesCasa;
@@ -35,10 +39,10 @@ public class Usuario implements Serializable{
         this.quant_quartos = quant_quartos;
     }
 
-    public void setId(UUID id){
+    public void setId(String id){
         this.id=id;
     }
-    public UUID getId(){
+    public String getId(){
         return id;
     }
 
@@ -66,11 +70,22 @@ public class Usuario implements Serializable{
     /*
     Padrao para usar o SNap shot < construtor sem argumentos \/
      */
-    public Usuario(){}
+    public Usuario(){
+
+    }
+
+    /*
     public Usuario(String endereco, String telefone ){
 
         setEndereco(endereco);
         setTelefone(telefone);
 
+    }
+     */
+
+    private void readObject(ObjectInputStream in)
+            throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+        this.context = null;
     }
 }

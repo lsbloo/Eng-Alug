@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import static android.content.ContentValues.TAG;
 import java.util.ArrayList;
@@ -52,15 +53,7 @@ public class FragmentoAnucio extends Fragment {
 
         list_user = new ArrayList<Usuario>();
 
-
-        test = (ImageView)getActivity().findViewById(R.id.infoCasa);
-
-        FirebaseApp.initializeApp(getActivity());
-        database = database.getInstance();
-        //fireBaseDatabase.setPersistenceEnabled(true);
-        databaseReference = database.getReference();
-
-
+        init_firebase();
         carregarDados();
         exibir_view();
 
@@ -74,28 +67,47 @@ public class FragmentoAnucio extends Fragment {
     private void carregarDados(){
 
         // Read from the database
-        databaseReference.child("Casas-Usuario").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+        try{
+
+            databaseReference.child("Casas-Usuario").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
                 /*
                 Download dados Database do DatabaseReference
                  */
-                for(DataSnapshot obj:dataSnapshot.getChildren()){
+                list_user.clear();
+                    for(DataSnapshot obj:dataSnapshot.getChildren()){
 
-                    Usuario usuario = (Usuario) obj.getValue(Usuario.class);
-                    list_user.add(usuario);
+                        Usuario usuario = (Usuario) obj.getValue(Usuario.class);
+                        list_user.add(usuario);
+                    }
+                    /*
+                    O dado do snapshot ja esta retornando e sendo adicionado no array
+                    e preciso carregar o mesmo na view e agrupar o download da foto no storage
+                    de forma sincronizada;
+
+                     */
+                    //Toast.makeText(getActivity(), "jahaush: "+list_user.size(), Toast.LENGTH_SHORT).show();
+
+                    //                String value = dataSnapshot.getValue(String.class);
+                    //              Log.d(TAG, "Value is: " + value);
                 }
 
-                //                String value = dataSnapshot.getValue(String.class);
-                //              Log.d(TAG, "Value is: " + value);
-            }
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    // Failed to read value
+                    Log.w(TAG, "Failed to read value.", error.toException());
+                }
+            });
 
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
+
+        }catch(ExceptionInInitializerError inInitializerError){
+            inInitializerError.printStackTrace();
+
+        }
+
+        Log.d("ARRAY USUARIO", "ARRAY USUARIO"+list_user.size());
+
     }
 
     private void exibir_view(){
@@ -104,5 +116,12 @@ public class FragmentoAnucio extends Fragment {
         ListView list = new ListView(getActivity());
         list.setAdapter(userAdapter);
 
+    }
+
+    private void init_firebase(){
+        FirebaseApp.initializeApp(getActivity());
+        database = database.getInstance();
+        //fireBaseDatabase.setPersistenceEnabled(true);
+        databaseReference = database.getReference();
     }
 }

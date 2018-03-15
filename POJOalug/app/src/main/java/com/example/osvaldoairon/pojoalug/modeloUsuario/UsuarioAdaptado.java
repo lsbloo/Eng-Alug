@@ -66,8 +66,6 @@ public class UsuarioAdaptado extends BaseAdapter{
         TextView  infCasa = (TextView)view.findViewById(R.id.infoCasa);
         TextView qntQuartos = (TextView)view.findViewById(R.id.qntQuartos);
         TextView tel = (TextView)view.findViewById(R.id.telefoneCasa);
-
-
         return view;
 
 
