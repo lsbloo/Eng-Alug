@@ -61,11 +61,11 @@ public class UsuarioAdaptado extends BaseAdapter{
 
         //View saida = LayoutInflater.from(ctx).inflate(R.layout.fragment_anucio,viewGroup,false);
 
-        ImageView imgCasa =(ImageView)view.findViewById(R.id.imgCasa);
-        TextView  endCasa = (TextView)view.findViewById(R.id.enderecoCasa);
-        TextView  infCasa = (TextView)view.findViewById(R.id.infoCasa);
-        TextView qntQuartos = (TextView)view.findViewById(R.id.qntQuartos);
-        TextView tel = (TextView)view.findViewById(R.id.telefoneCasa);
+        //ImageView imgCasa =(ImageView)view.findViewById(R.id.imgCasa);
+        //TextView  endCasa = (TextView)view.findViewById(R.id.enderecoCasa);
+        //TextView  infCasa = (TextView)view.findViewById(R.id.infoCasa);
+        //TextView qntQuartos = (TextView)view.findViewById(R.id.qntQuartos);
+        //TextView tel = (TextView)view.findViewById(R.id.telefoneCasa);
         return view;
 
 

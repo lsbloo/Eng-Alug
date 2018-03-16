@@ -50,32 +50,61 @@ public class FragmentoAnucio extends Fragment {
     private static UsuarioAdaptado userAdapter;
     private static Adapter_Recycle userAdapterRecycler;
     private static RecyclerView recyclerView;
+    private static View view;
 
 
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_anucio, container, false);
-        exibir_view(view);
+        view = inflater.inflate(R.layout.fragment_anucio, container, false);
+
+        init_firebase();
+        list_user = new ArrayList<Usuario>();
+
+
+        databaseReference.child("Casas-Usuario").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                /*
+                Download dados Database do DatabaseReference
+                 */
+                list_user.clear();
+                for(DataSnapshot obj:dataSnapshot.getChildren()){
+
+                    Usuario usuario = (Usuario) obj.getValue(Usuario.class);
+                    list_user.add(usuario);
+                }
+                //Toast.makeText(getActivity(), "jahaush: "+list_user.size(), Toast.LENGTH_SHORT).show();
+                exibir_view(view);
+                setLister_user(list_user);
+                    /*
+                    o arraylist esta chegando vazio em outras partes do codigo;
+                    tentei usar o set e o get pra redirecionar
+                    criei outro array auxiliar fora do snapsht
+                    --------------------------------------------
+                    nada resolvido;
+
+                     */
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
         return view;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        lista_usuarios = new ArrayList<Usuario>();
-        list_user = new ArrayList<Usuario>();
-        init_firebase();
-        carregarDados();
 
-        //userAdapter = new UsuarioAdaptado(getActivity(),list_user);
-        //setListAdapter(userAdapter);
-        //ListView list = new ListView(getActivity());
-        //list.setAdapter(userAdapter);
-        //this.getActivity().setContentView(list);
+
+
+
     }
-
 
     @Override
     public void onAttach(Context context) {
@@ -86,36 +115,6 @@ public class FragmentoAnucio extends Fragment {
 
         // Read from the database
 
-            databaseReference.child("Casas-Usuario").addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                /*
-                Download dados Database do DatabaseReference
-                 */
-                    for(DataSnapshot obj:dataSnapshot.getChildren()){
-
-                        Usuario usuario = (Usuario) obj.getValue(Usuario.class);
-                        list_user.add(usuario);
-                    }
-                    Toast.makeText(getActivity(), "jahaush: "+list_user.size(), Toast.LENGTH_SHORT).show();
-                    /*
-                    o arraylist esta chegando vazio em outras partes do codigo;
-                    tentei usar o set e o get pra redirecionar
-                    criei outro array auxiliar fora do snapsht
-                    --------------------------------------------
-                    nada resolvido;
-                    
-                     */
-                }
-
-                @Override
-                public void onCancelled(DatabaseError error) {
-                    // Failed to read value
-                    Log.w(TAG, "Failed to read value.", error.toException());
-                }
-            });
-        Log.d("ARRAY USUARIO", "ARRAY USUARIO"+list_user.size());
-
     }
 
     private void exibir_view(View v){
@@ -125,14 +124,20 @@ public class FragmentoAnucio extends Fragment {
         //list.setAdapter(userAdapter);
 
         recyclerView=v.findViewById(R.id.teste);
-
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this.getActivity());
-
-        recyclerView.setLayoutManager(mLayoutManager);
         userAdapterRecycler = new Adapter_Recycle(getActivity(),list_user);
-        Log.d("AKSS", "kapskapsk" +lista_usuarios.size());
-        Log.d("AKIII"," AQUI: "+userAdapterRecycler.getItemCount());
+
+        //final LinearLayoutManager mLayoutManager = new LinearLayoutManager(this.getActivity());
+        RecyclerView.LayoutManager layout = new LinearLayoutManager(getActivity(),
+                LinearLayoutManager.VERTICAL, false);
+
+
         recyclerView.setAdapter(userAdapterRecycler);
+        recyclerView.setLayoutManager(layout);
+
+
+        //Log.d("AKSS", "kapskapsk" + getList_user());
+        Log.d("AKIII"," AQUI: "+userAdapterRecycler.getItemCount());
+
 
 
 
@@ -143,6 +148,13 @@ public class FragmentoAnucio extends Fragment {
         database = database.getInstance();
         //fireBaseDatabase.setPersistenceEnabled(true);
         databaseReference = database.getReference();
+    }
+
+    public void setLister_user(ArrayList<Usuario> user){
+        this.list_user=user;
+    }
+    public ArrayList<Usuario> getList_user(){
+        return list_user;
     }
 
 

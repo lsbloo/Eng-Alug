@@ -39,11 +39,11 @@ public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHo
         /*
         esse inflate, carrega o xml do anuncio porem nao encarrega o storage do Firebase;
          */
-        View v = LayoutInflater.from(ctx).inflate(R.layout.fragment_anucio,parent,false);
+        View v = LayoutInflater.from(ctx).inflate(R.layout.content_fragment_anuncio,parent,false);
 
         ViewHolderUsuario viewHolderUsuario = new ViewHolderUsuario(v); //Construtor HolderUsuario pega referencia da View;
 
-        return  viewHolderUsuario;
+        return viewHolderUsuario;
     }
 
 
@@ -56,10 +56,11 @@ public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHo
         //Toast.makeText(ctx, "TAMANHO MUSUARIO" + mUsuario.size(), Toast.LENGTH_SHORT).show();
         Usuario usuario = mUsuario.get(position);
 
-        holder.txtTelefone.setText(usuario.getTelefone());
-        holder.txtQntQuartos.setText(String.valueOf(usuario.getQuant_quartos()));
-        holder.txtInfoCasa.setText(usuario.getInformacoesCasa());
-        holder.txtEndereco.setText(usuario.getEndereco());
+        holder.txtTelefone.setText("Telefone: " + usuario.getTelefone());
+        holder.txtQntQuartos.setText("Quantidade de Quartos: " + String.valueOf(usuario.getQuant_quartos()));
+        holder.txtInfoCasa.setText("Informaçoes Adicionais: " +usuario.getInformacoesCasa());
+        holder.txtEndereco.setText("Endereço: " + usuario.getEndereco());
+
 
     }
 

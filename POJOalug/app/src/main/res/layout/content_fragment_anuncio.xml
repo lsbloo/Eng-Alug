@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imgCasa"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/enderecoCasa"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/imgCasa"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/infoCasa"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/enderecoCasa"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/qntQuartos"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/infoCasa"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/telefoneCasa"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/qntQuartos"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
