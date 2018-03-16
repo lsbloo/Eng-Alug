@@ -2016,10 +2016,6 @@
         "source": "/home/osvaldoairon/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/36fb960fa7025cc6c34e424cef192b6e/res/layout/abc_search_view.xml"
     },
     {
-        "merged": "/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/res/merged/debug/layout_content_fragment_anucio.xml.flat",
-        "source": "/home/osvaldoairon/Eng-Alug/POJOalug/app/src/main/res/layout/content_fragment_anucio.xml"
-    },
-    {
         "merged": "/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/res/merged/debug/color_abc_tint_switch_track.xml.flat",
         "source": "/home/osvaldoairon/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/36fb960fa7025cc6c34e424cef192b6e/res/color/abc_tint_switch_track.xml"
     },

@@ -1,5 +1,6 @@
 package com.example.osvaldoairon.pojoalug.Act;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,11 +24,11 @@ import java.util.ArrayList;
 
 public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHolderUsuario> {
 
-    private Context ctx;
+    private Activity ctx;
     private ArrayList<Usuario> mUsuario;
     private int lenDados = 0;
 
-    public Adapter_Recycle(Context ctx , ArrayList<Usuario> user){
+    public Adapter_Recycle(Activity ctx , ArrayList<Usuario> user){
         this.ctx=ctx;
         this.mUsuario=user;
 
@@ -64,7 +65,7 @@ public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHo
 
     @Override
     public int getItemCount() {
-        if(mUsuario != null){
+        if(mUsuario.size() != 0){
             lenDados = mUsuario.size();
             return mUsuario.size();
         }

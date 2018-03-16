@@ -1,4 +1,4 @@
-#Fri Mar 16 00:29:23 BRT 2018
+#Fri Mar 16 01:35:16 BRT 2018
 base.0=/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/transforms/dexMerger/debug/9
 path.0=classes.dex
 renamed.0=classes.dex
