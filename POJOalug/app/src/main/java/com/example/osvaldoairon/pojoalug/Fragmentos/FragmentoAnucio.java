@@ -1,6 +1,7 @@
 package com.example.osvaldoairon.pojoalug.Fragmentos;
 
 import com.example.osvaldoairon.*;
+import com.example.osvaldoairon.pojoalug.Act.Adapter_Recycle;
 import com.example.osvaldoairon.pojoalug.Comunicador.ComunicadorEvent;
 import com.example.osvaldoairon.pojoalug.R;
 import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
@@ -16,11 +17,15 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -35,27 +40,53 @@ public class FragmentoAnucio extends Fragment {
 
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-    private static ArrayList<Usuario> list_user;
+    public static ArrayList<Usuario> list_user;
     private Usuario user;
     private ImageView test;
     ComunicadorEvent comunicadorEvent;
     private static UsuarioAdaptado userAdapter;
+    private static Adapter_Recycle userAdapterRecycler;
+    private static RecyclerView recyclerView;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_anucio, container,false);
+        View view = inflater.inflate(R.layout.fragment_anucio, container, false);
+        // Replace 'android.R.id.list' with the 'id' of your RecyclerView
+        recyclerView =view.findViewById(R.id.teste);
+
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this.getActivity());
+   //     Log.d("debugMode", "The application stopped after this");
+        recyclerView.setLayoutManager(mLayoutManager);
+
+        userAdapterRecycler = new Adapter_Recycle(this.getContext(),list_user);
+        recyclerView.setAdapter(userAdapterRecycler);
+        //setListAdapter(userAdapter);
+        //ListView list = new ListView(getActivity());
+        //list.setAdapter(userAdapter);
+
+        return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+
+
         list_user = new ArrayList<Usuario>();
 
         init_firebase();
         carregarDados();
-        exibir_view();
+
+        //userAdapter = new UsuarioAdaptado(getActivity(),list_user);
+        //setListAdapter(userAdapter);
+        //ListView list = new ListView(getActivity());
+        //list.setAdapter(userAdapter);
+        //this.getActivity().setContentView(list);
+
+
 
     }
 
@@ -86,7 +117,7 @@ public class FragmentoAnucio extends Fragment {
                     e preciso carregar o mesmo na view e agrupar o download da foto no storage
                     de forma sincronizada;
                      */
-                    //Toast.makeText(getActivity(), "jahaush: "+list_user.size(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "jahaush: "+list_user.size(), Toast.LENGTH_SHORT).show();
 
                     //                String value = dataSnapshot.getValue(String.class);
                     //              Log.d(TAG, "Value is: " + value);
@@ -110,10 +141,6 @@ public class FragmentoAnucio extends Fragment {
     }
 
     private void exibir_view(){
-        userAdapter = new UsuarioAdaptado(getActivity(),list_user);
-        //setListAdapter(userAdapter);
-        ListView list = new ListView(getActivity());
-        list.setAdapter(userAdapter);
 
     }
 

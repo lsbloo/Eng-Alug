@@ -21,7 +21,7 @@ import com.example.osvaldoairon.pojoalug.Act.ViewHolderUsuario;
 
 import java.util.ArrayList;
 
-public class Adapter_Recycle extends RecyclerView.Adapter {
+public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHolderUsuario> {
 
     private Context ctx;
     private ArrayList<Usuario> mUsuario;
@@ -34,7 +34,7 @@ public class Adapter_Recycle extends RecyclerView.Adapter {
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Adapter_Recycle.ViewHolderUsuario onCreateViewHolder(ViewGroup parent, int viewType) {
         /*
         esse inflate, carrega o xml do anuncio porem nao encarrega o storage do Firebase;
          */
@@ -48,14 +48,17 @@ public class Adapter_Recycle extends RecyclerView.Adapter {
 
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(Adapter_Recycle.ViewHolderUsuario holder, int position) {
         /*
         Pega a posicao do arrayList e carrega no Holder;
          */
-        mUsuario.get(position);
+        //Toast.makeText(ctx, "TAMANHO MUSUARIO" + mUsuario.size(), Toast.LENGTH_SHORT).show();
+        Usuario usuario = mUsuario.get(position);
 
-
-
+        holder.txtTelefone.setText(usuario.getTelefone());
+        holder.txtQntQuartos.setText(String.valueOf(usuario.getQuant_quartos()));
+        holder.txtInfoCasa.setText(usuario.getInformacoesCasa());
+        holder.txtEndereco.setText(usuario.getEndereco());
 
     }
 
@@ -69,6 +72,30 @@ public class Adapter_Recycle extends RecyclerView.Adapter {
         return 0;
     }
 
+    public class ViewHolderUsuario extends RecyclerView.ViewHolder{
+
+        /*
+            Classe responsavel por criar o ViewHolder similar ListView dentro do Recycle View;
+         */
+        private TextView txtEndereco;
+        private TextView txtInfoCasa;
+        private TextView txtQntQuartos;
+        private TextView txtTelefone;
+        private ImageView imgCasa;
+
+        public ViewHolderUsuario(View v) {
+            /*
+            Carrega a referencia dos dados da view no viewHolder;
+             */
+            super(v);
+            txtEndereco = v.findViewById(R.id.enderecoCasa);
+            txtInfoCasa = v.findViewById(R.id.infoCasa);
+            txtQntQuartos = v.findViewById(R.id.qntQuartos);
+            txtTelefone = v.findViewById(R.id.telefoneCasa);
+            imgCasa = v.findViewById(R.id.imgCasa);
+
+        }
+    }
 
 
 }

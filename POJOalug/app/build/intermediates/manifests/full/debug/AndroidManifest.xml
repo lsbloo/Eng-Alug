@@ -28,6 +28,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/iconealug"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.osvaldoairon.pojoalug.SplashAct"
@@ -45,7 +46,7 @@
             android:name="com.example.osvaldoairon.pojoalug.LogEnter"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.osvaldoairon.pojoalug.Act.Act_Activity"
+            android:name="com.example.osvaldoairon.pojoalug.Act.Adapter_Recycle"
             android:screenOrientation="portrait" />
 
         <meta-data

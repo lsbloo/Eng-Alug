@@ -4,8 +4,15 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
-    >
+    android:orientation="horizontal">
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/teste"
+        >
+
+    </android.support.v7.widget.RecyclerView>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -54,5 +61,6 @@
         android:layout_height="1dp"
         android:layout_gravity="bottom"
         android:background="@color/colorPrimary"/>
+
 
 </LinearLayout>

@@ -12,6 +12,9 @@ import com.example.osvaldoairon.pojoalug.R;
  */
 
 public class ViewHolderUsuario extends RecyclerView.ViewHolder{
+    /*
+    POJO;
+     */
 
     /*
         Classe responsavel por criar o ViewHolder similar ListView dentro do Recycle View;
