@@ -85,7 +85,6 @@ public class FragmentoAnucio extends Fragment {
                     O dado do snapshot ja esta retornando e sendo adicionado no array
                     e preciso carregar o mesmo na view e agrupar o download da foto no storage
                     de forma sincronizada;
-
                      */
                     //Toast.makeText(getActivity(), "jahaush: "+list_user.size(), Toast.LENGTH_SHORT).show();
 

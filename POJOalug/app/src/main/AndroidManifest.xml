@@ -30,7 +30,7 @@
         <activity android:name=".LogEnter"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".Act.Act_Activity"
+        <activity android:name=".Act.Adapter_Recycle"
             android:screenOrientation="portrait"/>
     </application>
 
