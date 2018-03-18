@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+
 
 
         <LinearLayout
@@ -45,35 +43,40 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <CheckBox
-                            android:id="@+id/check1"
-                            android:layout_width="wrap_content"
+                        <RadioGroup
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="1" />
+                            android:orientation="horizontal"
+                            android:id="@+id/radio"
+                            >
 
-                        <CheckBox
-                            android:id="@+id/check2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="2" />
-
-                        <CheckBox
-                            android:id="@+id/check3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="3" />
-
-                        <CheckBox
-                            android:id="@+id/check4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="mais de 3" />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:id="@+id/botao1"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:id="@+id/botao2"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3"
+                                android:id="@+id/botao3"
+                                />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="mais de 4"
+                                android:id="@+id/botao4"
+                                />
+                        </RadioGroup>
 
                     </LinearLayout>
 
@@ -84,7 +87,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:id="@+id/layoutMeio"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -111,17 +116,8 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/edt_tel"
-            android:layout_marginBottom="30dp"
-            android:layout_toEndOf="@+id/textView28"
-            android:layout_toRightOf="@+id/textView28"
-            android:text="Informações Pessoais."
-            android:textSize="@dimen/padrao"
-            android:textStyle="bold|italic" />
+
+
 
         <TextView
             android:id="@+id/textView26"
@@ -130,8 +126,46 @@
             android:layout_alignBottom="@+id/edt_tel"
             android:layout_alignEnd="@+id/textView28"
             android:layout_alignRight="@+id/textView28"
+            android:layout_weight="1"
             android:lineSpacingExtra="@dimen/dir"
             android:text="Telefone:"
+            android:textSize="@dimen/dir"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_savecad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="11dp"
+            android:layout_weight="1"
+            android:text="Salvar Dados" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/edt_tel"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="30dp"
+            android:layout_toEndOf="@+id/textView28"
+            android:layout_toRightOf="@+id/textView28"
+            android:layout_weight="1"
+            android:text="Informações Pessoais."
+            android:textSize="@dimen/padrao"
+            android:textStyle="bold|italic"
+            tools:ignore="NotSibling" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/edt_end"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"
+            android:text="Endereço:"
             android:textSize="@dimen/dir"
             android:textStyle="bold" />
 
@@ -143,19 +177,9 @@
             android:layout_alignLeft="@+id/btn_savecad"
             android:layout_alignStart="@+id/btn_savecad"
             android:layout_marginBottom="20dp"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="numberSigned" />
-
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/edt_end"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="Endereço:"
-            android:textSize="@dimen/dir"
-            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edt_end"
@@ -165,19 +189,13 @@
             android:layout_alignLeft="@+id/btn_savecad"
             android:layout_alignStart="@+id/btn_savecad"
             android:layout_marginBottom="20dp"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/btn_savecad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="11dp"
-            android:text="Salvar Dados" />
 
-        <ImageView
+
+    <ImageView
             android:id="@+id/img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -187,4 +205,4 @@
             app:srcCompat="@mipmap/ic_launcher" />
 
     </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+

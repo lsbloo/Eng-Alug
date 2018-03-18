@@ -27,6 +27,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.osvaldoairon.pojoalug.Blind.MaskEditText;
@@ -75,6 +76,7 @@ public class FragmentoCadastro extends Fragment {
     private static DatabaseReference databaseReference;
 
     private int quantidade_quartos = 0;
+    private RadioGroup radio;
 
 
 
@@ -105,10 +107,7 @@ public class FragmentoCadastro extends Fragment {
         edt_endereco = (EditText)getActivity().findViewById(R.id.edt_end);
         dados_casa = (EditText)getActivity().findViewById(R.id.dados_casa);
 
-        check1 = (CheckBox)getActivity().findViewById(R.id.check1);
-        check2 = (CheckBox)getActivity().findViewById(R.id.check2);
-        check3 = (CheckBox)getActivity().findViewById(R.id.check3);
-        check4 = (CheckBox)getActivity().findViewById(R.id.check4);
+        radio =(RadioGroup)getActivity().findViewById(R.id.radio);
         //checkFoto =(CheckBox)getActivity().findViewById(R.id.up_foto);
 
         btn_saveCad = (Button)getActivity().findViewById(R.id.btn_savecad);
@@ -132,21 +131,22 @@ public class FragmentoCadastro extends Fragment {
 
                 }else{
 
-                    if(check1.isChecked()){
-                        quantidade_quartos = 1;
-                        check1.setChecked(false);
-                    }
-                    if(check2.isChecked()){
-                        quantidade_quartos = 2;
-                        check2.setChecked(false);
-                    }
-                    if(check3.isChecked()){
-                        quantidade_quartos = 3;
-                        check3.setChecked(false);
-                    }
-                    if(check4.isChecked()){
-                        quantidade_quartos = 4;
-                        check4.setChecked(false);
+                    switch (radio.getCheckedRadioButtonId()){
+                        case R.id.botao1:
+                            quantidade_quartos = 1;
+                            break;
+
+                        case R.id.botao2:
+                            quantidade_quartos =2;
+                            break;
+                        case R.id.botao3:
+                            quantidade_quartos = 3;
+                            break;
+                        case R.id.botao4:
+                            quantidade_quartos = 4;
+                            break;
+                        default:
+                            quantidade_quartos = 1;
                     }
 
                     Usuario usuario = new Usuario();
