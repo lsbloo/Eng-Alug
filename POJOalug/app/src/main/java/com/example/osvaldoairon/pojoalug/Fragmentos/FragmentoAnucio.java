@@ -1,37 +1,40 @@
 package com.example.osvaldoairon.pojoalug.Fragmentos;
 
-import com.example.osvaldoairon.*;
 import com.example.osvaldoairon.pojoalug.Act.Adapter_Recycle;
 import com.example.osvaldoairon.pojoalug.Comunicador.ComunicadorEvent;
 import com.example.osvaldoairon.pojoalug.R;
+import com.example.osvaldoairon.pojoalug.helper.PicassoCliente;
 import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
 import com.example.osvaldoairon.pojoalug.modeloUsuario.UsuarioAdaptado;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import android.content.Context;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import static android.content.ContentValues.TAG;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 /**
@@ -51,6 +54,12 @@ public class FragmentoAnucio extends Fragment {
     private static Adapter_Recycle userAdapterRecycler;
     private static RecyclerView recyclerView;
     private static View view;
+    private static StorageReference mStorageRef;
+    private static StorageReference photoRef;
+    private static ArrayList<byte[]> list_photos;
+    private static PicassoCliente clientePicasso;
+    private static ImageView img;
+    private static Uri urlUri;
 
 
 
@@ -58,9 +67,18 @@ public class FragmentoAnucio extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_anucio, container, false);
+        list_user = new ArrayList<Usuario>();
+        list_photos = new ArrayList<byte[]>();
+        clientePicasso = new PicassoCliente();
 
         init_firebase();
-        list_user = new ArrayList<Usuario>();
+        try {
+            download_Photo();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        len_listPhoto();
+
 
 
         databaseReference.child("Casas-Usuario").addValueEventListener(new ValueEventListener() {
@@ -101,7 +119,7 @@ public class FragmentoAnucio extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+       // img =(ImageView)getActivity().findViewById(R.id.imgCasa);
 
 
     }
@@ -124,7 +142,7 @@ public class FragmentoAnucio extends Fragment {
         //list.setAdapter(userAdapter);
 
         recyclerView=v.findViewById(R.id.teste);
-        userAdapterRecycler = new Adapter_Recycle(getActivity(),list_user);
+        userAdapterRecycler = new Adapter_Recycle(getActivity(),list_user,urlUri);
 
         //final LinearLayoutManager mLayoutManager = new LinearLayoutManager(this.getActivity());
         RecyclerView.LayoutManager layout = new LinearLayoutManager(getActivity(),
@@ -148,6 +166,8 @@ public class FragmentoAnucio extends Fragment {
         database = database.getInstance();
         //fireBaseDatabase.setPersistenceEnabled(true);
         databaseReference = database.getReference();
+        mStorageRef = FirebaseStorage.getInstance().getReference();
+        photoRef = mStorageRef.child("FotosPerfilUsuario/1520124643405jpg");
     }
 
     public void setLister_user(ArrayList<Usuario> user){
@@ -158,4 +178,26 @@ public class FragmentoAnucio extends Fragment {
     }
 
 
+    public void download_Photo() throws IOException {
+        /*
+        Download das imagens das casas;
+         */
+        photoRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                urlUri=uri;
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+
+                                    }
+                                }
+        );
+
+    }
+    public int len_listPhoto(){
+        Log.d("Tamanho vetorPHOTO", "len vetor photo" + list_photos.size());
+        return list_photos.size();
+    }
 }

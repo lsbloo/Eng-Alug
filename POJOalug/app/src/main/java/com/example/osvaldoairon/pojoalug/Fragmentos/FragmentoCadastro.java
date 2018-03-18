@@ -214,15 +214,6 @@ public class FragmentoCadastro extends Fragment {
                 Log.d("Tag bit" ,"lol" +bit);
 
 
-
-                /*
-                Usar picasso para carregamento de imagens
-
-                    Picasso.with(context).load(R.drawable.landing_screen).into(imageView1);
-                    Picasso.with(context).load("file:///android_asset/DvpvklR.png").into(imageView2);
-                    Picasso.with(context).load(new File(...)).into(imageView3);
-
-                 */
                 imgbtn.setImageBitmap(
                         redimensionarImagemBitmap(getActivity(),bit,100,100));
 

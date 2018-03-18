@@ -5,36 +5,36 @@
     build-mode="COLD"
     density="xhdpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
+    ir-eligibility="FIELD_ADDED"
     plugin-version="3.0.1"
-    timestamp="1521223963550"
+    timestamp="1521346641226"
     token="3547243462680698656"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="683" />
+        duration="404" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="113" />
+        duration="57" />
     <task
         name="verifier"
-        duration="29" />
+        duration="40" />
 
     <artifact
         location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
         type="SPLIT" />
+    <artifact
+        location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1521223515157"
+        timestamp="1521342475268"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/outputs/apk/debug/app-debug.apk"
-            type="SPLIT_MAIN" />
         <artifact
             location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
@@ -68,31 +68,50 @@
         <artifact
             location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1521223590407"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1521223814689"
-        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/outputs/apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1521223963550"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1521345423907"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/outputs/apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1521346641226"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
     </build>
 

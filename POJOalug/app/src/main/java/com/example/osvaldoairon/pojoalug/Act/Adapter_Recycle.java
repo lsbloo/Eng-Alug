@@ -2,6 +2,7 @@ package com.example.osvaldoairon.pojoalug.Act;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.osvaldoairon.pojoalug.R;
+import com.example.osvaldoairon.pojoalug.helper.PicassoCliente;
 import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
 import com.example.osvaldoairon.pojoalug.Act.ViewHolderUsuario;
 
@@ -27,10 +29,13 @@ public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHo
     private Activity ctx;
     private ArrayList<Usuario> mUsuario;
     private int lenDados = 0;
+    private Uri uri;
+    private static PicassoCliente clientePicasso;
 
-    public Adapter_Recycle(Activity ctx , ArrayList<Usuario> user){
+    public Adapter_Recycle(Activity ctx, ArrayList<Usuario> user, Uri uri){
         this.ctx=ctx;
         this.mUsuario=user;
+        this.uri = uri;
 
     }
 
@@ -60,6 +65,8 @@ public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHo
         holder.txtQntQuartos.setText("Quantidade de Quartos: " + String.valueOf(usuario.getQuant_quartos()));
         holder.txtInfoCasa.setText("Informaçoes Adicionais: " +usuario.getInformacoesCasa());
         holder.txtEndereco.setText("Endereço: " + usuario.getEndereco());
+        clientePicasso.downloading(ctx,String.valueOf(uri),holder.imgCasa);
+
 
 
     }
