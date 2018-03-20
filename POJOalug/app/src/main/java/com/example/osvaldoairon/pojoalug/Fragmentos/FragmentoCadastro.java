@@ -56,6 +56,8 @@ import java.util.UUID;
 
 import static android.app.Activity.RESULT_OK;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by osvaldoairon on 28/02/18.
  */
@@ -70,6 +72,7 @@ public class FragmentoCadastro extends Fragment {
     private static Uri imagemSelecionada;
     String  fotoStringurl;
     private Button btn_saveCad;
+    private CircleImageView circleImageView;
 
     private static FirebaseAuth autenticacao;
     private static FirebaseDatabase firebaseDatabase;
@@ -97,6 +100,8 @@ public class FragmentoCadastro extends Fragment {
 
         autenticacao = FirebaseAuth.getInstance();
 
+
+
         FirebaseApp.initializeApp(getActivity());
         firebaseDatabase = firebaseDatabase.getInstance();
         //fireBaseDatabase.setPersistenceEnabled(true);
@@ -105,7 +110,7 @@ public class FragmentoCadastro extends Fragment {
         imgbtn = (ImageView)getActivity().findViewById(R.id.img);
         edt_telefone = (EditText)getActivity().findViewById(R.id.edt_tel);
         edt_endereco = (EditText)getActivity().findViewById(R.id.edt_end);
-        dados_casa = (EditText)getActivity().findViewById(R.id.dados_casa);
+        dados_casa = (EditText)getActivity().findViewById(R.id.dados_casa2);
 
         radio =(RadioGroup)getActivity().findViewById(R.id.radio);
         //checkFoto =(CheckBox)getActivity().findViewById(R.id.up_foto);
@@ -149,15 +154,23 @@ public class FragmentoCadastro extends Fragment {
                             quantidade_quartos = 1;
                     }
 
-                    Usuario usuario = new Usuario();
-                    usuario.setEndereco(edt_endereco.getText().toString());
-                    usuario.setInformacoesCasa(dados_casa.getText().toString());
-                    usuario.setTelefone(edt_telefone.getText().toString());
-                    usuario.setQuant_quartos(quantidade_quartos);
-                    usuario.setId(UUID.randomUUID().toString());
+                    if(edt_telefone.length() < 14){
+                        Toast.makeText(getActivity(), "Campo Telefone inválido!", Toast.LENGTH_SHORT).show();
+                        edt_telefone.setText("");
+                    }else{
 
-                    databaseReference.child("Casas-Usuario").child(usuario.getId()).setValue(usuario);
-                    salvarInformacoesUser();
+                        Usuario usuario = new Usuario();
+                        usuario.setEndereco(edt_endereco.getText().toString());
+                        usuario.setInformacoesCasa(dados_casa.getText().toString());
+                        usuario.setTelefone(edt_telefone.getText().toString());
+                        usuario.setQuant_quartos(quantidade_quartos);
+                        usuario.setId(UUID.randomUUID().toString());
+
+                        databaseReference.child("Casas-Usuario").child(usuario.getId()).setValue(usuario);
+                        salvarInformacoesUser();
+                        Toast.makeText(getActivity(), "Dados Salvos !", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
 
             }
@@ -180,7 +193,6 @@ public class FragmentoCadastro extends Fragment {
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()){
                         subirImagemFirebaseSTORAGE();
-                        Toast.makeText(getActivity(), "Upload Phooto", Toast.LENGTH_SHORT).show();
                     }
                     else{
                         Toast.makeText(getActivity(), "Not Upload PHoto!", Toast.LENGTH_SHORT).show();
@@ -244,6 +256,8 @@ public class FragmentoCadastro extends Fragment {
 
                 }
             });
+        }else{
+            Toast.makeText(getActivity(), "Nenhuma Foto Selecionada", Toast.LENGTH_SHORT).show();
         }
 
     }

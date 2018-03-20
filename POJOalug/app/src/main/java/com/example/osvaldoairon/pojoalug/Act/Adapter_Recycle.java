@@ -20,7 +20,7 @@ import com.example.osvaldoairon.pojoalug.R;
 import com.example.osvaldoairon.pojoalug.helper.PicassoCliente;
 import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
 import com.example.osvaldoairon.pojoalug.Act.ViewHolderUsuario;
-
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import java.util.ArrayList;
 
@@ -31,6 +31,7 @@ public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHo
     private int lenDados = 0;
     private Uri uri;
     private static PicassoCliente clientePicasso;
+    private CircleImageView circleImageView;
 
     public Adapter_Recycle(Activity ctx, ArrayList<Usuario> user, Uri uri){
         this.ctx=ctx;

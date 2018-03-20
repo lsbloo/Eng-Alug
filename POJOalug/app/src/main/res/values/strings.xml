@@ -2,7 +2,7 @@
 
     <string name="fragment_anucio">Fragment anucio de tab Anucio </string>
     <string name="fragment_cadastro"> Fragment cadastroCasa tab Casa</string>
-    <string name="fragment_contato"> Fragment contato de contato ! tab contato</string>
+    <string name="fragment_contato"> Fragment suasCasas de contato ! tab contato</string>
 
     <string name="email_tela">Email</string>
     <string name="pass_tela">Password</string>
@@ -37,7 +37,7 @@
     <string-array name="secoes">
         <item> Anúncios </item>
         <item> Cadastrar Casas </item>
-        <item> Contatos</item>
+        <item> Suas Casas</item>
     </string-array>
 
     <array name="cores_bg">
