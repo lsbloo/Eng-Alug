@@ -12,6 +12,11 @@ import java.util.ArrayList;
 /**
  * Created by osvaldoairon on 22/03/2018.
  */
+/*
+Criar os metodos inserir , deletar e editar
+    pegar o ID do usuario UUIID e deletar do firebase por consulta
+    ao mesmo tempo que deleta do SQL;
+ */
 
 public class HelperUsuario {
 
