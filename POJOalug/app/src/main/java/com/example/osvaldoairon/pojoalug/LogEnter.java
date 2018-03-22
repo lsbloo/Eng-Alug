@@ -135,6 +135,7 @@ public class LogEnter extends AppCompatActivity {
                                 at.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 Toast.makeText(LogEnter.this, "Bem vindo!", Toast.LENGTH_SHORT).show();
                                 startActivity(at);
+                                finish();
                             } else {
                                 Log.d("Tag Login de Usuario", "Login de usuario NAO REALIZADO COM SUCESSO");
                                 Toast.makeText(LogEnter.this, "Cadastre-se Novamente!", Toast.LENGTH_SHORT).show();

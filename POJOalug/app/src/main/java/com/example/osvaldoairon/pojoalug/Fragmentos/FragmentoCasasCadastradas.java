@@ -13,12 +13,11 @@ import com.example.osvaldoairon.pojoalug.R;
  * Created by osvaldoairon on 28/02/18.
  */
 
-public class FragmentoContato extends Fragment {
+public class FragmentoCasasCadastradas extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-
 
         return inflater.inflate(R.layout.fragment_contato, container,false);
     }

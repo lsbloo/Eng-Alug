@@ -20,8 +20,24 @@ public class Usuario implements Serializable{
     private String informacoesCasa;
     private String id;
     private Object context;
+    private byte[] fotos;
+    private long id_sql;
 
+    public long getId_sql() {
+        return id_sql;
+    }
 
+    public void setId_sql(long id_sql) {
+        this.id_sql = id_sql;
+    }
+
+    public byte[] getFotos() {
+        return fotos;
+    }
+
+    public void setFotos(byte[] fotos) {
+        this.fotos = fotos;
+    }
 
     public String getInformacoesCasa() {
         return informacoesCasa;

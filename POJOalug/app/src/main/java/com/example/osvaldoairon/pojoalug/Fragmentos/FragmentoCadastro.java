@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
@@ -34,6 +35,7 @@ import com.example.osvaldoairon.pojoalug.Blind.MaskEditText;
 import com.example.osvaldoairon.pojoalug.Comunicador.ComunicadorEvent;
 import com.example.osvaldoairon.pojoalug.Manifest;
 import com.example.osvaldoairon.pojoalug.R;
+import com.example.osvaldoairon.pojoalug.helper.HelperUsuario;
 import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -51,6 +53,7 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.util.UUID;
 
@@ -81,6 +84,9 @@ public class FragmentoCadastro extends Fragment {
     private int quantidade_quartos = 0;
     private RadioGroup radio;
 
+    private HelperUsuario helperUsuario;
+    private static byte[] img_p;
+
 
 
     private static final int IMAGEM_ESCOLHIDA = 101;
@@ -99,7 +105,7 @@ public class FragmentoCadastro extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         autenticacao = FirebaseAuth.getInstance();
-
+        helperUsuario = new HelperUsuario(getActivity());
 
 
         FirebaseApp.initializeApp(getActivity());
@@ -158,16 +164,20 @@ public class FragmentoCadastro extends Fragment {
                         Toast.makeText(getActivity(), "Campo Telefone inválido!", Toast.LENGTH_SHORT).show();
                         edt_telefone.setText("");
                     }else{
-
+                        salvarInformacoesUser();
                         Usuario usuario = new Usuario();
                         usuario.setEndereco(edt_endereco.getText().toString());
                         usuario.setInformacoesCasa(dados_casa.getText().toString());
                         usuario.setTelefone(edt_telefone.getText().toString());
                         usuario.setQuant_quartos(quantidade_quartos);
                         usuario.setId(UUID.randomUUID().toString());
+                        usuario.setFotos(img_p);
+
+
+                        helperUsuario.inserir(usuario);
 
                         databaseReference.child("Casas-Usuario").child(usuario.getId()).setValue(usuario);
-                        salvarInformacoesUser();
+
                         Toast.makeText(getActivity(), "Dados Salvos !", Toast.LENGTH_SHORT).show();
                     }
 
@@ -229,7 +239,7 @@ public class FragmentoCadastro extends Fragment {
                 imgbtn.setImageBitmap(
                         redimensionarImagemBitmap(getActivity(),bit,100,100));
 
-
+                img_p = transformarImageViewtobyte(imgbtn);
 
             } catch(Exception e){
                 e.printStackTrace();
@@ -333,5 +343,22 @@ public class FragmentoCadastro extends Fragment {
 
         @Override public String key() { return "square()"; }
 
+    }
+    public static byte[] transformarImageViewtobyte(ImageView v){
+        // Pega o getDrawble da imageview e faz o cast para o bitmap
+        //  em seguida da um bitmap compress com 3 parametros
+        // o formato da img a qualidade e o bytearray de saida
+        // por fim retorna a imagem em byte
+
+        Bitmap bitmap = ((BitmapDrawable)v.getDrawable()).getBitmap();
+
+
+        ByteArrayOutputStream saida = new ByteArrayOutputStream();
+
+        bitmap.compress(Bitmap.CompressFormat.PNG,100,saida);
+
+        byte[] img = saida.toByteArray();
+
+        return img;
     }
 }

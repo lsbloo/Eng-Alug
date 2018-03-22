@@ -1,4 +1,4 @@
-#Tue Mar 20 16:23:42 GMT-03:00 2018
-base.0=C\:\\Users\\Pedro H\\Osvaldo\\osvaldinhow\\Eng-Alug\\POJOalug\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+#Thu Mar 22 17:56:31 GFT 2018
+base.0=C\:\\Users\\lucas\\Osvaldo\\Eng-Alug\\POJOalug\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
 path.0=classes.dex
 renamed.0=classes.dex

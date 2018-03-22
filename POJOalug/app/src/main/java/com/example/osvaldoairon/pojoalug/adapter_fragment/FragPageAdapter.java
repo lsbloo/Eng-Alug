@@ -1,17 +1,12 @@
 package com.example.osvaldoairon.pojoalug.adapter_fragment;
 
 import android.support.v4.app.Fragment;
-import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.view.View;
-import android.view.ViewGroup;
-import com.example.osvaldoairon.pojoalug.*;
+
 import com.example.osvaldoairon.pojoalug.Fragmentos.FragmentoAnucio;
 import com.example.osvaldoairon.pojoalug.Fragmentos.FragmentoCadastro;
-import com.example.osvaldoairon.pojoalug.Fragmentos.FragmentoContato;
-import android.support.fragment.*;
+import com.example.osvaldoairon.pojoalug.Fragmentos.FragmentoCasasCadastradas;
 
 
 /**
@@ -41,7 +36,7 @@ public class FragPageAdapter extends FragmentStatePagerAdapter {
                 return new FragmentoCadastro();
 
             case 2:
-                return new FragmentoContato();
+                return new FragmentoCasasCadastradas();
 
             default:
                 return null;
