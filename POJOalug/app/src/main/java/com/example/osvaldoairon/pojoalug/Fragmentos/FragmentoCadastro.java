@@ -171,10 +171,17 @@ public class FragmentoCadastro extends Fragment {
                         usuario.setTelefone(edt_telefone.getText().toString());
                         usuario.setQuant_quartos(quantidade_quartos);
                         usuario.setId(UUID.randomUUID().toString());
-                        usuario.setFotos(img_p);
+
+                        Usuario usuario2 = new Usuario();
+                        usuario2.setEndereco(edt_endereco.getText().toString());
+                        usuario2.setInformacoesCasa(dados_casa.getText().toString());
+                        usuario2.setTelefone(edt_telefone.getText().toString());
+                        usuario2.setQuant_quartos(quantidade_quartos);
+                        usuario2.setId(UUID.randomUUID().toString());
+                        usuario2.setFotos(img_p);
 
 
-                        helperUsuario.inserir(usuario);
+                        helperUsuario.inserir(usuario2);
 
                         databaseReference.child("Casas-Usuario").child(usuario.getId()).setValue(usuario);
 
