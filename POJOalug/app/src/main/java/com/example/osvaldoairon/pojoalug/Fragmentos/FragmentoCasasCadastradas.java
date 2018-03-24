@@ -19,8 +19,11 @@ import com.example.osvaldoairon.pojoalug.helper.HelperUsuario;
 import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
 import com.example.osvaldoairon.pojoalug.modeloUsuario.UsuarioAdaptado;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
@@ -39,44 +42,55 @@ public class FragmentoCasasCadastradas extends Fragment {
     private RecyclerView recyclerView;
     private static View view;
     private static ListView list;
+    private static UsuarioAdaptado adapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         helperUsuario = new HelperUsuario(getActivity());
         helperUsuario.pegarDadosSQL();
-        init_firebase();
+
         listuser_db = new ArrayList<Usuario>();
         //listView=(ListView)getActivity().findViewById(R.id.listviewCasa);
         //view = inflater.inflate(R.layout.content_fragmento_contato, container,false);
         //loadLayout_Cas(view);
 
-        UsuarioAdaptado adapter = new UsuarioAdaptado(getActivity(),helperUsuario.getReturnList());
+        adapter = new UsuarioAdaptado(getActivity(),helperUsuario.getReturnList());
         list = new ListView(getActivity());
         list.setAdapter(adapter);
         deletarCasas(list);
         return list;
 
     }
-    public void deletarCasas(ListView listview){
+    public void deletarCasas(final ListView listview){
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 /*
                 Deletar Casas do Sql como tambem Firebase;
                  */
-
+                Usuario usuarioPosicaoArray = helperUsuario.getPosition(position);
+                deletarFirebase(usuarioPosicaoArray.getId());
+                deletarSQL(usuarioPosicaoArray);
+                helperUsuario.list_usuarios.remove(usuarioPosicaoArray);
+                listview.setAdapter(adapter);
             }
         });
     }
 
+    public void resetSQL(){
+        helperUsuario.resetTable();
+    }
 
-
-    public void init_firebase(){
+    public void deletarFirebase(String id){
+        Log.v("ID_TESTE", "ID_TESTE" + id);
         FirebaseApp.initializeApp(getActivity());
         database = database.getInstance();
-        databaseReference = database.getReference();
-
+        databaseReference = database.getReference("Casas-Usuario").child(id);
+        databaseReference.removeValue();
+    }
+    public void deletarSQL(Usuario usuario){
+        helperUsuario.deleteUser(usuario);
     }
 
     public void loadLayout_Cas(View view){

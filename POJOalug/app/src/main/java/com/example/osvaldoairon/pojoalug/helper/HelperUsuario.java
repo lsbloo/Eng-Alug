@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
 
@@ -113,9 +114,10 @@ public class HelperUsuario {
     public int deleteUser(Usuario usuario){
         SQLiteDatabase db = usuarioDB.getWritableDatabase();
 
-        int line = db.delete(SqlUsuario.NOME_TABELA, SqlUsuario.COLUNA_ID_BANCO + " = ?", new String[]{String.valueOf(usuario.getId_sql())});
+        int linha = db.delete(SqlUsuario.NOME_TABELA, SqlUsuario.COLUNA_ID_USUARIO+"=?", new String[]{String.valueOf(usuario.getId())});
         db.close();
-        return line;
+        Log.v("DELETEADO SQL", "DELETE SQL" + usuario.getId());
+        return linha;
     }
     public void resetTable(){
             SQLiteDatabase db = usuarioDB.getWritableDatabase();
@@ -123,6 +125,10 @@ public class HelperUsuario {
             db.execSQL(sql_del);
             db.close();
 
+    }
+
+    public Usuario getPosition(int position){
+        return list_usuarios.get(position);
     }
 }
 

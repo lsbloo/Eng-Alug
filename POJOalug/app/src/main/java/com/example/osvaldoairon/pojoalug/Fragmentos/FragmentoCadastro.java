@@ -177,7 +177,7 @@ public class FragmentoCadastro extends Fragment {
                         usuario2.setInformacoesCasa(dados_casa.getText().toString());
                         usuario2.setTelefone(edt_telefone.getText().toString());
                         usuario2.setQuant_quartos(quantidade_quartos);
-                        usuario2.setId(UUID.randomUUID().toString());
+                        usuario2.setId(usuario.getId());
                         usuario2.setFotos(img_p);
 
 
