@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/osvaldoairon/Eng-Alug/POJOalug/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
+            "outputFile": "C:\\Users\\Pedro H\\Osvaldo\\Eng-Alug\\POJOalug\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "/home/osvaldoairon/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/36fb960fa7025cc6c34e424cef192b6e/res/values-v17/values-v17.xml",
+                    "source": "C:\\Users\\Pedro H\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\0c8d69288560a7fcf26d0936694b465a\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

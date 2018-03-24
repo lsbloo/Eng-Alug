@@ -24,7 +24,7 @@ import java.util.List;
 public class Adapter_Recycler_Casas extends RecyclerView.Adapter<Adapter_Recycler_Casas.ViewHolderUsuarioCasa> {
 
     private Context ctx;
-    private ArrayList<Usuario> list_usuario;
+    public ArrayList<Usuario> list_usuario;
 
 
     public Adapter_Recycler_Casas(Context ctx , ArrayList<Usuario> user){
@@ -36,7 +36,7 @@ public class Adapter_Recycler_Casas extends RecyclerView.Adapter<Adapter_Recycle
     @Override
     public Adapter_Recycler_Casas.ViewHolderUsuarioCasa onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(ctx).inflate(R.layout.content_fragmento_contato,parent,false);
+        View v = LayoutInflater.from(ctx).inflate(R.layout.fragment_contato,parent,false);
 
         ViewHolderUsuarioCasa holderUsuarioCasa = new ViewHolderUsuarioCasa(v);
 
@@ -74,7 +74,7 @@ public class Adapter_Recycler_Casas extends RecyclerView.Adapter<Adapter_Recycle
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list_usuario.size();
     }
 
 

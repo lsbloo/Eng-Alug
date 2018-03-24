@@ -2,6 +2,9 @@ package com.example.osvaldoairon.pojoalug.modeloUsuario;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +18,7 @@ import com.example.osvaldoairon.pojoalug.R;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 /**
  * Created by osvaldoairon on 07/02/18.
@@ -29,9 +33,9 @@ public class UsuarioAdaptado extends BaseAdapter{
     private Context ctx;
     private ArrayList<Usuario> list_usuarios = new ArrayList<Usuario>();
 
-    public UsuarioAdaptado(Context ctx , ArrayList<Usuario> arrayList) {
+    public UsuarioAdaptado(Context context , ArrayList<Usuario> arrayList) {
         super();
-        ctx=ctx;
+        ctx=context;
         list_usuarios=arrayList;
     }
 
@@ -55,17 +59,39 @@ public class UsuarioAdaptado extends BaseAdapter{
         Usuario usuario = list_usuarios.get(position); // pega a posicao do item array especificado
 
         if (view == null) {
-            LayoutInflater mInflater = (LayoutInflater)ctx.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            view = mInflater.inflate(R.layout.fragment_anucio, null);
+            view = LayoutInflater.from(ctx).inflate(R.layout.fragment_listiewcasa,viewGroup,false);
         }
+
+        TextView endereco;
+        TextView telefone;
+        ImageView fotos;
+        TextView inf_casa;
+        TextView quntQuartos;
 
         //View saida = LayoutInflater.from(ctx).inflate(R.layout.fragment_anucio,viewGroup,false);
 
-        //ImageView imgCasa =(ImageView)view.findViewById(R.id.imgCasa);
-        //TextView  endCasa = (TextView)view.findViewById(R.id.enderecoCasa);
-        //TextView  infCasa = (TextView)view.findViewById(R.id.infoCasa);
-        //TextView qntQuartos = (TextView)view.findViewById(R.id.qntQuartos);
-        //TextView tel = (TextView)view.findViewById(R.id.telefoneCasa);
+        endereco=(TextView)view.findViewById(R.id.endCasaUser);
+        telefone=(TextView)view.findViewById(R.id.telefoneCasaUser);
+        inf_casa=(TextView)view.findViewById(R.id.infoCasaUser);
+        quntQuartos=(TextView)view.findViewById(R.id.quartosUser);
+        fotos=(ImageView)view.findViewById(R.id.imgCasaUser);
+
+        byte[] fotoArray;
+        Bitmap raw;
+
+        fotoArray = usuario.getFotos();
+
+        Resources res = ctx.getResources();
+
+        if(fotoArray != null){
+            raw = BitmapFactory.decodeByteArray(fotoArray,0,fotoArray.length);
+            fotos.setImageBitmap(raw);
+        }
+        quntQuartos.setText("Quantidade de Quartos: " +usuario.getQuant_quartos());
+        inf_casa.setText("Informações Casa:" +usuario.getInformacoesCasa());
+        telefone.setText("Telefone:" + usuario.getTelefone());
+        endereco.setText("Endereço: " + usuario.getEndereco());
+
         return view;
 
 

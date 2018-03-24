@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="300dp">
 
 
-    <ImageView
-        android:id="@+id/imgCasaUser"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        app:srcCompat="@drawable/imgcasapadrao" />
-
-
-    <TextView
-        android:id="@+id/endCasaUser"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/telefoneCasaUser"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="11dp" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/telefoneCasaUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/infoCasaUser"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="18dp" />
-
-    <TextView
-        android:id="@+id/infoCasaUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/quartosUser"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="13dp" />
-
-    <TextView
-        android:id="@+id/quartosUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="12dp" />
+        <ImageView
+            android:id="@+id/imgCasaUser"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@+id/endCasaUser"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
+            app:srcCompat="@drawable/imgcasapadrao" />
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/endCasaUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/telefoneCasaUser"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="11dp" />
+
+        <TextView
+            android:id="@+id/telefoneCasaUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/infoCasaUser"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="18dp" />
+
+        <TextView
+            android:id="@+id/infoCasaUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/quartosUser"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="13dp" />
+
+        <TextView
+            android:id="@+id/quartosUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="12dp" />
+    </RelativeLayout>
+
+
+
+</android.support.constraint.ConstraintLayout>

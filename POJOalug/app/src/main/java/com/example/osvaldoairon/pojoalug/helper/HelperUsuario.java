@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.osvaldoairon.pojoalug.modeloUsuario.Usuario;
 
@@ -22,7 +23,7 @@ public class HelperUsuario {
 
     private SqlUsuario usuarioDB;
 
-    private ArrayList<Usuario> list_usuarios = new ArrayList<Usuario>();
+    public ArrayList<Usuario> list_usuarios = new ArrayList<Usuario>();
 
     public HelperUsuario(Context ctx){
 
@@ -46,18 +47,15 @@ public class HelperUsuario {
 
         long id = db.insert(SqlUsuario.NOME_TABELA,null,cv);
 
-        try{
+
 
             if(id != -1){
                 usuario.setId_sql(id);
             }
             db.close();
+            Log.v("INSERINDO" , "INSERIDOO");
             return id;
-        }catch (Exception e){
-            e.printStackTrace();
-        }
 
-        return 0;
     }
 
 
@@ -100,6 +98,30 @@ public class HelperUsuario {
         cursor.close();
         db.close();
 
+
+
+
+    }
+    public ArrayList<Usuario>getReturnList(){
+        return list_usuarios;
+    }
+
+    public int getTamanholistUsuario(){
+        return list_usuarios.size();
+    }
+
+    public int deleteUser(Usuario usuario){
+        SQLiteDatabase db = usuarioDB.getWritableDatabase();
+
+        int line = db.delete(SqlUsuario.NOME_TABELA, SqlUsuario.COLUNA_ID_BANCO + " = ?", new String[]{String.valueOf(usuario.getId_sql())});
+        db.close();
+        return line;
+    }
+    public void resetTable(){
+            SQLiteDatabase db = usuarioDB.getWritableDatabase();
+            String sql_del = "DELETE FROM " + SqlUsuario.NOME_TABELA;
+            db.execSQL(sql_del);
+            db.close();
 
     }
 }
