@@ -167,7 +167,7 @@ public class FragmentoAnucio extends Fragment {
         //fireBaseDatabase.setPersistenceEnabled(true);
         databaseReference = database.getReference();
         mStorageRef = FirebaseStorage.getInstance().getReference();
-        photoRef = mStorageRef.child("FotosPerfilUsuario/1520124643405jpg");
+        photoRef = mStorageRef.child("FotosPerfilUsuario/1520124643405jpg"); // nao estou trabalhando com o Storage ainda;
     }
 
     public void setLister_user(ArrayList<Usuario> user){
