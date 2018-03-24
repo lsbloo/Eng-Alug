@@ -1,5 +1,7 @@
 package com.example.osvaldoairon.pojoalug.Fragmentos;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -65,15 +67,26 @@ public class FragmentoCasasCadastradas extends Fragment {
     public void deletarCasas(final ListView listview){
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
                 /*
                 Deletar Casas do Sql como tambem Firebase;
                  */
-                Usuario usuarioPosicaoArray = helperUsuario.getPosition(position);
-                deletarFirebase(usuarioPosicaoArray.getId());
-                deletarSQL(usuarioPosicaoArray);
-                helperUsuario.list_usuarios.remove(usuarioPosicaoArray);
-                listview.setAdapter(adapter);
+                new AlertDialog.Builder(getActivity()).setTitle("Delete!").setMessage("Deseja deletar essa casa?").setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Usuario usuarioPosicaoArray = helperUsuario.getPosition(position);
+                        deletarFirebase(usuarioPosicaoArray.getId());
+                        deletarSQL(usuarioPosicaoArray);
+                        helperUsuario.list_usuarios.remove(usuarioPosicaoArray);
+                        listview.setAdapter(adapter);
+                    }
+                }).setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(getContext(), "Operação Cancelada!", Toast.LENGTH_SHORT).show();
+                    }
+                }).show();
+
             }
         });
     }

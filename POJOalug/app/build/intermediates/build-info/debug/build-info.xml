@@ -6,7 +6,7 @@
     density="xhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1521866593599"
+    timestamp="1521867711067"
     token="8365471424448659903"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -22,6 +22,10 @@
     <task
         name="verifier"
         duration="0" />
+
+    <artifact
+        location="C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\build\outputs\apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
@@ -66,8 +70,8 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1521866510859"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1521867345548"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
@@ -75,7 +79,11 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1521866593599"
-        verifier="COLD_SWAP_REQUESTED" />
+        timestamp="1521867711067"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Pedro H\Osvaldo\Eng-Alug\POJOalug\app\build\outputs\apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
 
 </instant-run>

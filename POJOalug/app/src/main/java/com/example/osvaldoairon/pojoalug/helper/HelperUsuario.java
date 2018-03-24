@@ -116,7 +116,7 @@ public class HelperUsuario {
 
         int linha = db.delete(SqlUsuario.NOME_TABELA, SqlUsuario.COLUNA_ID_USUARIO+"=?", new String[]{String.valueOf(usuario.getId())});
         db.close();
-        Log.v("DELETEADO SQL", "DELETE SQL" + usuario.getId());
+        Log.v("DELETADO SQL", "DELETE SQL" + usuario.getId());
         return linha;
     }
     public void resetTable(){
