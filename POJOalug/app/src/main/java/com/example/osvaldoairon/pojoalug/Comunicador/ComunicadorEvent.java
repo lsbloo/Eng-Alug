@@ -5,7 +5,7 @@ package com.example.osvaldoairon.pojoalug.Comunicador;
  */
 
 /*
-    Interface que faz a comunicação das Fragments(Cadastro,Anucio,Contato)
+    Interface que faz a comunicação das Fragments(Cadastro,Anucio,CasasCadastradas)
     para a activity Main. !
     Joga os dados na main Activity
 

@@ -64,7 +64,7 @@ public class Adapter_Recycle extends RecyclerView.Adapter<Adapter_Recycle.ViewHo
 
         holder.txtTelefone.setText("Telefone: " + usuario.getTelefone());
         holder.txtQntQuartos.setText("Quantidade de Quartos: " + String.valueOf(usuario.getQuant_quartos()));
-        holder.txtInfoCasa.setText("Informaçoes Adicionais: " +usuario.getInformacoesCasa());
+        holder.txtInfoCasa.setText("Informações Adicionais: " +usuario.getInformacoesCasa());
         holder.txtEndereco.setText("Endereço: " + usuario.getEndereco());
         clientePicasso.downloading(ctx,String.valueOf(uri),holder.imgCasa);
 

@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity implements ComunicadorEvent 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setSupportActionBar((Toolbar)findViewById(R.id.toolbar));
-
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tabLayout=(TabLayout)findViewById(R.id.tab_layout);
         viewPager=(ViewPager)findViewById(R.id.view_pager);
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements ComunicadorEvent 
 
         tabLayout.setupWithViewPager(viewPager);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,4 +69,6 @@ public class MainActivity extends AppCompatActivity implements ComunicadorEvent 
     public void comunicadorFragment(String dado) {
 
     }
+
+
 }

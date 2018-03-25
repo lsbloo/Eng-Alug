@@ -186,6 +186,7 @@ public class FragmentoCadastro extends Fragment {
                         databaseReference.child("Casas-Usuario").child(usuario.getId()).setValue(usuario);
 
                         Toast.makeText(getActivity(), "Dados Salvos !", Toast.LENGTH_SHORT).show();
+                        resetCamps();
                     }
 
                 }
@@ -367,5 +368,15 @@ public class FragmentoCadastro extends Fragment {
         byte[] img = saida.toByteArray();
 
         return img;
+    }
+
+    public void resetCamps(){
+        /*
+
+         */
+        edt_endereco.setText("");
+        edt_telefone.setText("");
+        dados_casa.setText("");
+        imgbtn.setImageDrawable(getResources().getDrawable(R.drawable.iconecasinha));
     }
 }

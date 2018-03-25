@@ -79,6 +79,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
+        android:fontFamily="monospace"
         android:text="Cadastre-se aqui"
+        android:textColor="@android:color/background_light"
         android:textSize="20sp" />
 </RelativeLayout>
